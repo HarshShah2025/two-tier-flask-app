@@ -15,8 +15,7 @@ services:
       - ./message.sql:/docker-entrypoint-initdb.d/message.sql  
     networks:
       - twotier
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:5000/ || exit 1"]
+    healthcheck: test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
       interval: 10s
       timeout: 5s
       retries: 5
