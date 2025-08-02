@@ -16,7 +16,7 @@ services:
     networks:
       - twotier
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/ || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
