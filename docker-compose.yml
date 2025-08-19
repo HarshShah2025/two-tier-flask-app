@@ -3,7 +3,7 @@ version: "3.8"
 services:
   mysql:
     user: "${UID}:${GID}" 
-    image: mysql:5.7
+    image: mysql:latest
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
